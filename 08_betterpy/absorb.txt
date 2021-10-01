@@ -1,1 +1,27 @@
+Group No Named - Patrick Ging, Ryan Wang, Hebe Huang Period 2
+SoftDev
+K08 - Comparing work06 Code
+2021-9-30
 
+Questions:
+
+How long does it take to open csv files
+/is it recommended to store its information the first time we open it instead of opening it multiple times?
+
+How does random.choices() actually work? 
+
+
+Comments:
+
+I didn't know about the random.choices() function that would have taken care of picking a random weighted occupation for us. 
+Team "Nice Mice"'s solution and Team "Hi-C"'s solution both used this and were a lot more consise here.
+
+In our solution, we made an array of weight intervals for each occupation. 
+Looking at "The Best Team"'s solution and "Trio of Success"'s solution make me realize that we could have used integers 
+instead of an entire array to check upper bounds, especially since we are only returning one job.
+
+Team "Untitled" used the panda library for reading csv files. Panda is a cute name but I am still not sure how to use the library.
+
+Concerns:
+
+None
