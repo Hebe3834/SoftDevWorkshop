@@ -3,6 +3,7 @@ SoftDev
 K08 - Comparing work06 Code
 2021-9-30
 
+
 Questions:
 
 How long does it take to open csv files
@@ -21,6 +22,7 @@ Looking at "The Best Team"'s solution and "Trio of Success"'s solution make me r
 instead of an entire array to check upper bounds, especially since we are only returning one job.
 
 Team "Untitled" used the panda library for reading csv files. Panda is a cute name but I am still not sure how to use the library.
+
 
 Concerns:
 
