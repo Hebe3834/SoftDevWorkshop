@@ -1,0 +1,26 @@
+Pokemon : Andrew Juang, Hebe Huang, Bob, Umbreon
+SoftDev
+K09 -- Simple Path to Greatness
+2021-10-02
+
+Q0: Flask() looks like a constructor in Java. Running Flask() creates an
+instance of the default Flask app which you set to the app variable.
+
+Q1: In files "/" usually refers to the root directory. @app.route("/") likely
+routes the app to the root directory.
+
+Q2: This wil print "__main__" into the terminal when you run app.py
+
+Q3: "No hablo queso!" will print to the server hosted at http://127.0.0.1:5000/.
+Python functions in Flask will display to the web browser what they return.
+
+Q4: In Java you call a method of a class using Class.method(), so you are calling
+the instance of the Flask class to run using the run() method.
+
+New Notes:
+- The webpage at the http://127.0.0.1:5000/ URL displays the return value of the
+function as expected.
+- Inspecting element on the webpage shows that the python file
+created html tags with "No hablo queso!" in the body tag.
+- When you refresh the page, the Console shows a red
+"GEThttp://127.0.0.1:5000/favicon.ico" message (404 NOT FOUND).
