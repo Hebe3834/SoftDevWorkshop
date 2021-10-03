@@ -7,4 +7,3 @@ def hello_world():
     return "No hablo queso!"  # Q3: Will this appear anywhere? How u know?
 
 app.run()  # Q4: Where have you seen similar constructs in other languages?
-                
