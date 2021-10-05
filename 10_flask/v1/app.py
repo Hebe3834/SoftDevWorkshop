@@ -4,11 +4,10 @@
 # 2021-10-04
 
 from flask import Flask
-app = Flask(__name__) # Q0: This looks like a Java constructor
+app = Flask(__name__) #create instance of class Flask
 
-@app.route("/") # Q1: '/' might refer to a root directory
+@app.route("/")       #assign fxn to route
 def hello_world():
-    print(__name__) # Q2: This prints "__main__" to terminal
-    return "No hablo queso!"  # Q3: This will appear on the screen.
+    return "No hablo queso!" # returns to site at 127.0.0.1:5000
 
-app.run()  # Q4: I haven't seen this before
+app.run()
