@@ -1,0 +1,16 @@
+Team Whales: Hebe Huang, Josephine Lee, Han Zhang
+SoftDev
+K14: Form and Function
+2021-10-14
+
+Predictions:
+* app will be __name__ by default
+* request would be from our html form
+* since the request.args is a dictionary we can predict that the html form inputs will be put as values into the dict
+
+Discoveries:
+* printed into the terminal
+* app was printed as "<Flask 'app'>" not as __name__
+* requesting results from local flask host
+* after inputting into the html form, the name became the key and our input became the values
+* request.headers returns local host, user-agent, and more?
