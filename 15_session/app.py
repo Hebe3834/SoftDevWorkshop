@@ -6,28 +6,29 @@
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
 from flask import request           #facilitate form submission
-from flask import session           #facilitate sessions
+from flask import session           #facilitate flask sessions
+import random                       #facilitate random choice
+import string                       #get characters used for random string
 
 #the conventional way:
 #from flask import Flask, render_template, request
 
+def randomString():
+    chars = string.ascii_letters + string.digits + string.punctuation
+    key = ''.join(random.choice(chars) for i in range(15))
+    return key
+
 app = Flask(__name__)    #create Flask object
+app.secret_key = randomString()   #set flask session secret key
 
-
-'''
-trioTASK:
-~~~~~~~~~~~ BEFORE RUNNING THIS, ~~~~~~~~~~~~~~~~~~
-...read for understanding all of the code below.
-Some will work as written; other sections will not. Can you predict which?
-Devise some simple tests you can run to "take apart this engine," as it were.
-Execute your tests. Process results.
-PROTIP: Insert your own in-line comments wherever they will help your future self and/or current teammates understand what is going on.
-'''
-
-app.secret_key = "foo"
-
-@app.route("/") #, methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
+    if 'currentuser' in session: #checks if user has session
+        if session['currentuser'] == 'user': #hardcode to check if user is correct
+            return render_template('response.html', method = session['currentmethod'], user = session['currentuser'])
+        else: #returns error page is invalid username
+            return render_template('error.html', type = 'username')
+
     print("\n\n\n")
     print("***DIAG: this Flask obj ***")
     print(app)
@@ -57,41 +58,49 @@ def authenticate():
     print(request.headers)
 
     username = 'user'
-    password = 'password'
+    password = 'password' 
 
+    if 'currentuser' in session: #checks if user has session
+        if session['currentuser'] == 'user': #hardcode to check if user is correct
+            return render_template('response.html', method = session['currentmethod'], user = session['currentuser'])
+        else: #returns error page is invalid username
+            return render_template('error.html', type = 'username')
+    
     if request.method == 'POST': #conditional for 'POST' method or 'GET' method
         user = request.form['username']
         pas = request.form['password']
         if user == 'user':
             if pas == 'password':
-                session['currentuser'] = request.form['username']
+                session['currentuser'] = user
+                session['currentmethod'] = request.method
                 return render_template('response.html',method = request.method, user = user)  #correct login
             else:
                 return render_template('error.html', type = 'password') #returns password error
-        else:
+        else: 
             return render_template('error.html', type = 'username') #returns username error
     else:
         user = request.args['username']
         pas = request.args['password']
         if request.args['username'] == 'user':
             if request.args['password'] == 'password':
-                session['currentuser'] = request.args['username']
-                return render_template('response.html',method = request.method, user = request.args['username'])  #correct login
+                session['currentuser'] = user
+                session['currentmethod'] = request.method
+                return render_template('response.html',method = request.method, user = user)  #correct login
             else:
                 return render_template('error.html', type = 'password') #returns password error
-        else:
+        else: 
             return render_template('error.html', type='username') #returns username error
-
-@app.route("/logout?")
+    
+    
+@app.route("/logout")
 def logout():
-    session.pop("currentuser")
-    return render_template( 'login.html' )
+    if 'currentuser' in session:
+        session.pop('currentuser')
+        session.pop('currentmethod')
+    return render_template('login.html')
 
-
-    # returns response.html with the inputs method and user.
-
-
+    
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
-    app.debug = True
+    app.debug = True 
     app.run()

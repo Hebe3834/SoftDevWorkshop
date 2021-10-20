@@ -2,3 +2,12 @@
 # SoftDev
 # K15: Sessions Greetings
 # 2021-10-18
+
+https://pythonbasics.org/flask-http-methods/
+
+Default method is 'GET', but you can declare it to be 'POST' in the html form.
+'POST' is stored by the user, while 'GET' is stored by the server
+
+Notes about functionality of web app:
+If submitting wrong credentials, you will be redirected to error page.
+Session is only saved after logging in with correct credentials.
