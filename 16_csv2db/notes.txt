@@ -1,0 +1,43 @@
+Team Whales: Hebe Huang, Josephine Lee, Han Zhang
+SoftDev
+K16: All About Database
+2021-10-21
+
+SQLite commands: .quit - exit the sqlite terminal
+  .tables - lists all the tables
+  .header on|off - turns headers on and off
+  .mode column|csv|list|html|insert|line|tabs - changes the way the table is displayed from SELECT; list is the default mode
+  .help - displays all possible commands
+Creating tables:
+
+
+CREATE TABLE tpotusa (name TEXT, id INTEGER PRIMARY KEY);
+INSERT INTO tpotusa VALUES ("basitar", 2);
+INSERT INTO tpotusa VALUES ("guitbass", 1);
+INSERT INTO tpotusa VALUES ("drums", 0);
+
+Shows the field (column) for every record (row):
+
+SELECT * FROM <name>;
+
+Filtering results:
+
+SELECT <column_name> FROM <table_name> WHERE <condition>;
+Example:
+SELECT name FROM tpotusa WHERE id = 0;
+- gets the names from each record where id = 0
+
+Python script for interacting with a SQLite database:
+
+import sqlite3 #enable SQLite operations
+
+#open db if exists, otherwise create
+db = sqlite3.connect("foo") 
+
+c = db.cursor() #facilitate db ops
+
+c.execute("CREATE TABLE roster(name TEXT, userid INTEGER)") #executes sqlite command
+
+db.commit() #save changes
+db.close()
+
