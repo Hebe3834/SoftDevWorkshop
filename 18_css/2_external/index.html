@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Clyde "Thluffy" Sinclair
-       SoftDev pd0
-       K18 -- CSS basics
-       2021-11-23t
+<!-- Justin Zou (Piggy), Hebe Huang (Umbreon)
+    SoftDev pd0
+    K18 -- CSS basics
+    2021-11-22
 
-	 WORK FILE for CSS 	
-    -->
+    Lorem ipsum generator used: https://loremipsum.io/
+
+    External Style Sheet format:
+        <head> 
+          <link rel="style.css"
+                type="text/css"
+                href="STYLE FILE">
+        </head>
+        (CSS STUFF in a file named "style.css")
+    Pros: CSS (styling) and HTML (basic formatting/content) are in separate files
+    Cons: May have to switch between multiple files for CSS and HTML
+
+  WORK FILE for CSS
+  -->
 
   <head>
     <meta charset="utf-8"/>
     <title>foo title</title>
+    <link rel = "stylesheet" type = "text/css" href="style.css">
   </head>
 
   <body>
+    <div class = "contents"> <!-- main content of page, minus background. Overflow:hidden keeps the two cols on separate sides of page -->
     <h1>foo heading 1</h1>
+      <div class = "col">
     <h3>nav foo</h3>
-    <ul>
+    <ul> <!-- navebar on the left -->
       <li><a href="">dis</a></li>
       <li><a href="">dat</a></li>
       <li><a href="">de udda ting</a></li>
     </ul>
+  </div>
+    <div class = "col2"> <!-- content on the right -->
     <h2>main foo heading</h2>
-    <p>tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk 
-
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    </div>
       <br>
       <br>
-
-      Copyright &copy; 2021 Clyde "Thluffy" Sinclair
-
+    </div>
+    <div class ="footer">
+      Copyright &copy; 2021 Justin Zou, Hebe Huang
+    </div>
   </body>
 
 </html>
