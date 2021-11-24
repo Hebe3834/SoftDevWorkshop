@@ -1,4 +1,4 @@
-# Justin Zou, Hebe Huang
+# The Brave Hamsters: Justin Zou, Hebe Huang
 # SoftDev
 # K19: A RESTful Journey Skyward
 # 2021-11-23
