@@ -13,7 +13,7 @@ app = Flask(__name__)
 def home():
     api_key = open('key_nasa.txt', 'r').read()
     nasa = urllib.request.urlopen('https://api.nasa.gov/planetary/apod?api_key=' + api_key)
-    d = json.loads(nasa.read())
+    d = json.loads(nasa.read()) #json.loads converts the string from nasa.read() into a dictionary
     return render_template("main.html", pic = d["url"], explanation = d["explanation"])
 
 
