@@ -11,7 +11,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    nasa = urllib.request.urlopen('https://api.nasa.gov/planetary/apod?api_key=G4M45FjpqLVeBnRGW7ma8GV5qXdOSVjSuw6vgJid')
+    api_key = open('key_nasa.txt', 'r').read()
+    nasa = urllib.request.urlopen('https://api.nasa.gov/planetary/apod?api_key=' + api_key)
     d = json.loads(nasa.read())
     return render_template("main.html", pic = d["url"], explanation = d["explanation"])
 

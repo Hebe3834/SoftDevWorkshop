@@ -1,7 +1,12 @@
-Justin Zou, Hebe Huang
+The Brave Hamsters: Justin Zou, Hebe Huang
 SoftDev
 K19: A RESTful Journey Skyward
 2021-11-23
 
 Notes:
-After creating an API key, everyone gets the same image and JSON from NASA
+-After creating an API key, everyone gets the same image and JSON file content from NASA
+-You can't simply put in the image url for the image source for the HTML
+- There seems to be a certification error on my computer. 
+Looking at piazza saw what this issue was, but it seemed to be addressed for macs yet I had a windows.
+- urllib is something that doesn't have to be installed while urllib3 does have to be installed
+- When trying out urllib3 there seemed to be errors when it came to installing it; it was installed already via the terminal yet was not registered in the code.
