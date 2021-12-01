@@ -1,0 +1,30 @@
+The Brave Hamsters: Justin Zou, Hebe Huang
+SoftDev
+K22: Who Does Frame Work For?
+2021-11-29
+
+Foundation Notes:
+- There are 3 ways to use Foundation:
+  - We can install it with a package manager that already has the compiled CSS and JavaScript as well as the source files.
+  - We can also install it with something called Foundation CLI, and then creating a new project with foundation keyword
+  - We can also simply link the online CDN Links and get the online CSS for it
+    - This is also the preferred method
+- Foundation prioritizes mobile users
+  - You code for small screens first and larger screens automatically inherit these aspects and you can customize them if needed
+- Foundation has powerful layout assets
+  - Its new powerful grid system is the XY-grid that combines old legacy systems in a much cleaner ways
+  - It also has a powerful form layout
+  - This is very useful for dynamic resizing
+  - Defining the class of a div to be "grid-x" or "grid-y" will make the div render vertically/horizontally
+    - These divs can then be filled with divs of class "cell"
+- Like other frontend framework, it uses ids and classes in order to call the CSS
+- Compared to previous iterations, Foundation is much faster (50%) and more condensed.
+- Foundation has built-in mixins
+  - Ex:@include xy-cell-size($size, $gutters, $gutter-type, $breakpoint, $vertical);
+  - Mixins are a SASS feature that allow you to define reusable styles
+    - SASS 
+        - Stands for "Syntactically Awesome Style Sheet" (actually)
+        - Is a more advanced version of CSS that includes variables, inheritance, and more
+        - File extension of .scss
+        - Foundation was written with SASS. The _settings.scss file includes variables 
+        such as $button-font-color and $grid-container-padding that can be changed
