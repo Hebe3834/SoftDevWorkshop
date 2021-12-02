@@ -1,0 +1,13 @@
+The Brave Hamsters: Justin Zou, Hebe Huang
+SoftDev
+K23: No. 2?
+2021-12-01
+
+
+How do we align images using bootstrap
+
+bootstrap container auto contains well
+
+col alert alert-info but the column color is still blue
+
+alert is sizing in bootstrap
