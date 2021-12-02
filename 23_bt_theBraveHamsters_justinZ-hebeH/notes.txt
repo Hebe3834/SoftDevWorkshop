@@ -8,8 +8,15 @@ DISCO(veries):
 - Unlike Foundation's XY grid system with cells, Bootstrap uses containers, rows, and cols
 - Bootstrap has many useful form classes
 
+QCC:
+We note that we can link an external javaScript file that allows us to use elements that previously require javaScript.
+The dropdown menu can go to different parts of the page by using ids.
+
 Q0 
 - Is there a way to align images in Bootstrap so that they are on the same line?
     - (Solved by placing images in divs, which we then arranged onto the same line)
+- Asked the other duo about text-center as a class
 Q1 
 - We prefered Bootstrap over Foundation because it felt more organized and easy to understand. 
+It had elements such container which felt a bit more intuitive than the x-y grid plane that is used for Foundation.
+However overall the two frameworks feel very similar with similar classes so either one could work for us.
