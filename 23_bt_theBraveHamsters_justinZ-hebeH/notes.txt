@@ -3,11 +3,13 @@ SoftDev
 K23: No. 2?
 2021-12-01
 
+DISCO(veries):
+- Bootstrap containers contain content well and auto generate margins/padding nicely
+- Unlike Foundation's XY grid system with cells, Bootstrap uses containers, rows, and cols
+- Bootstrap has many useful form classes
 
-How do we align images using bootstrap
-
-bootstrap container auto contains well
-
-col alert alert-info but the column color is still blue
-
-alert is sizing in bootstrap
+Q0 
+- Is there a way to align images in Bootstrap so that they are on the same line?
+    - (Solved by placing images in divs, which we then arranged onto the same line)
+Q1 
+- We prefered Bootstrap over Foundation because it felt more organized and easy to understand. 
