@@ -11,8 +11,17 @@ In the Digital Ocean Console:
 - Install Apache: https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
                   sudo apt install apache2
                   sudo ufw allow 'Apache'
+- Added ssh keys for each computer that will need to access the droplet:
+    1) Copy your ssh public key from your local computer (github link above) 
+    2) Launch the Droplet console and switch to the user that you will be working as (ie su hebe)
+    3) cd into the root directory: cd ~
+    4) if the .ssh directory exists:
+          cd into .ssh then paste your ssh key into the end of the authorized_keys file
+       if .ssh directory does not exist:
+          mkdir .ssh
+          cd .ssh
+          create authorized_keys and paste your ssh key there
                   
                   
-
 Tips:
 - Be in root when adding users
