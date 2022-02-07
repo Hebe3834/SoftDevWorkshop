@@ -1,0 +1,19 @@
+Team HAM :: Hebe Huang, Andrew Juang, Michelle Lo
+SoftDev pd2
+K27 -- Basic functions in JavaScript
+2022-02-04
+
+DISCO
+-----------------------------------------------------------------
+* console.log() prints results in the CONSOLE
+* function is keyword
+* => seems to take the place of the "function" keyword
+* you need a semicolon after each line and after the function (different from java)
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* What exactly does the => do? What is the difference between that and "function"?
+* How flexible are the args? Can you use arrays?
+* What is var?
+=================================================================
