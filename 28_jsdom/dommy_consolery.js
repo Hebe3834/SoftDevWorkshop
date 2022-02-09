@@ -1,4 +1,4 @@
-// Team HAM :: Andrew Juang, Hebe Huang, Michelle Lo 
+// Team HAM :: Hebe Huang, Andrew Juang, Michelle Lo
 // SoftDev pd2
 // K28 -- Getting more comfortable with the dev console and the DOM
 // 2022-02-08t
@@ -6,69 +6,77 @@
 
 
 //send diagnostic output to console
-console.log("AYO"); // Prints AYO to the console
+//(Ctrl-Shift-K in Firefox to reveal console)
+console.log("AYO"); //ayo
 
-// Sets i,j to hello and 20 respectively
-let i = "hello"; 
-let j = 20;
-// console.log(i);
-// console.log(j);
+var i = "hello";
+var j = 20;
+console.log(i) //sends "hello" to console
+console.log(j) //sends 20 to console
 
-
-//assign an anonymous fxn to a let
-// declares a function f that adds 30 to the value passed in
-let f = function(x) {
-  let j=30;
+//assign an anonymous fxn to a var
+var f = function(x) {
+  var j=30; //j is 30 only in the scope of this function (otherwise, it would be 20).
   return j+x;
 };
-console.log(f(j)); // 50
-console.log(f(i)); // 30hello
+console.log(f(i)) //30hello
+console.log(f(j)) //50
 
 
 //instantiate an object
-// similar to a dictionary or a struct in C
-let o = { 'name' : 'Thluffy',
+//similar to a dictionary!
+var o = { 'name' : 'Thluffy',
           age : 15,
           items : [10, 20, 30, 40],
           morestuff : {a : 1, b : 'ayo'},
-          func : function(x) {
+          func : function(x) { //alternative way of defining a function
             return x+30;
           }
         };
-console.log(o.morestuff); // you can nest an object in an object
-console.log(o.age); // you can print the stuff with a period
-console.log(o.func(j)); // can call a function similarly 
+//console.log(o) //will print the object in the console
+
+//can print specific aspects of an object (instance variables in java terms)
+//using the syntax used to get the value of a key in a dictionary.
+console.log(o.age) //15
+console.log(o.items[1]) //20
+console.log(o.morestuff.b) //ayo
+console.log(o.func(j)) //50
+console.log(o.func(i)) //hello30
 
 
-let addItem = function(text) {
-  let list = document.getElementById("thelist");
-  let newitem = document.createElement("li");
+
+var addItem = function(text) {
+  var list = document.getElementById("thelist"); //corresponds to an element on the html file called "thelist"
+  var newitem = document.createElement("li");
   newitem.innerHTML = text;
   list.appendChild(newitem);
 };
-let bob = "bob";
-addItem(bob); // adds bob to the html list 
+addItem("NEW ITEM") //adds a new item called "new item"
+addItem(3) //also allows numbers
 
-let removeItem = function(n) {
-  let listitems = document.getElementsByTagName('li');
+
+var removeItem = function(n) {
+  var listitems = document.getElementsByTagName('li');
   listitems[n].remove();
 };
-// removeItem(2); // removes item 0 from the list
+removeItem(9) //removes previously added 3
+//removeItem(10) //produces error
 
 
-let red = function() {
-  let items = document.getElementsByTagName("li");
-  for(let i = 0; i < items.length; i++) {
+var red = function() {
+  var items = document.getElementsByTagName("li");
+  for(var i = 0; i < items.length; i++) {
     items[i].classList.add('red');
-    console.log(items[i].classList) // prints the classes of li tags
   }
 };
+red() //will turn the first and last elements red
+//li elements whose class lists are either empty or have red at the end will be red.
+//there seems to be an order of importance for colors as defined in the style sheet: red < green < blue.
 
-red(); // only changes items 1, 8, and 9 because blue and green have precedence over red
 
-let stripe = function() {
-  let items = document.getElementsByTagName("li");
-  for(let i = 0; i < items.length; i++) {
+var stripe = function() {
+  var items = document.getElementsByTagName("li");
+  for(var i = 0; i < items.length; i++) {
     if (i%2==0){
       items[i].classList.add('red');
     } else {
@@ -76,6 +84,7 @@ let stripe = function() {
     }
   }
 };
+stripe()
 
 //insert your implementations here for...
 // FIB
@@ -112,10 +121,10 @@ console.log(gcd(12, 6));
 
 
 let fibEx = fib(10);
-addItem("The 10th fibonacci number is " + fibEx); 
+addItem("The 10th fibonacci number is " + fibEx);
 
 let factEx = fact(10);
-addItem("10! = " + factEx); 
+addItem("10! = " + factEx);
 
 let gcdEx = gcd(990, 99);
-addItem("GCD of 990 and 99 is " + gcdEx); 
+addItem("GCD of 990 and 99 is " + gcdEx);
