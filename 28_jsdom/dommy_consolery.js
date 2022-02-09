@@ -119,12 +119,31 @@ let gcd = function (a, b) {
 }
 console.log(gcd(12, 6));
 
+//
+// let fibEx = fib(10);
+// addItem("The 10th fibonacci number is " + fibEx);
+//
+// let factEx = fact(10);
+// addItem("10! = " + factEx);
+//
+// let gcdEx = gcd(990, 99);
+// addItem("GCD of 990 and 99 is " + gcdEx);
 
-let fibEx = fib(10);
-addItem("The 10th fibonacci number is " + fibEx);
 
-let factEx = fact(10);
-addItem("10! = " + factEx);
+const btn1 = document.getElementById("fibBtn");
+btn1.addEventListener("click", (e) => {
+  let fibEx = fib(10);
+  addItem("The 10th fibonacci number is " + fibEx);
+});
 
-let gcdEx = gcd(990, 99);
-addItem("GCD of 990 and 99 is " + gcdEx);
+const btn2 = document.getElementById("factBtn");
+btn2.addEventListener("click", (e) => {
+  let factEx = fact(10);
+  addItem("10! = " + factEx);
+});
+
+const btn3 = document.getElementById("gcdBtn");
+btn3.addEventListener("click", (e) => {
+  let gcdEx = gcd(99, 990);
+  addItem("GCD of 990 and 99 is " + gcdEx);
+});
