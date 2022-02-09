@@ -1,9 +1,9 @@
-// Team HAM :: Hebe Huang, Andrew Juang, Michelle Lo
+// Team HAMS :: Hebe Huang, Andrew Juang, Michelle Lo, Shadman Rakib
 // SoftDev pd2
 // K28 -- Getting more comfortable with the dev console and the DOM
-// 2022-02-08t
+// 2022-02-09t
 // --------------------------------------------------
-
+//
 
 //send diagnostic output to console
 //(Ctrl-Shift-K in Firefox to reveal console)
