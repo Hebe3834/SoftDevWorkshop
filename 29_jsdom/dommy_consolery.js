@@ -129,21 +129,33 @@ console.log(gcd(12, 6));
 // let gcdEx = gcd(990, 99);
 // addItem("GCD of 990 and 99 is " + gcdEx);
 
+let num1 = document.getElementById("num1").value;
+let num2 = document.getElementById("num2").value;
 
 const btn1 = document.getElementById("fibBtn");
 btn1.addEventListener("click", (e) => {
-  let fibEx = fib(10);
-  addItem("The 10th fibonacci number is " + fibEx);
+  num1 = document.getElementById("num1").value;
+  num2 = document.getElementById("num2").value;
+  let fibEx = fib(num1);
+  addItem("Fibonacci number " + num1 + ": " + fibEx);
+  fibEx = fib(num2);
+  addItem("Fibonacci number " + num2 + ": " + fibEx);
 });
 
 const btn2 = document.getElementById("factBtn");
 btn2.addEventListener("click", (e) => {
-  let factEx = fact(10);
-  addItem("10! = " + factEx);
+  num1 = document.getElementById("num1").value;
+  num2 = document.getElementById("num2").value;
+  let factEx = fact(num1);
+  addItem(num1 + "! = " + factEx);
+  factEx = fact(num2);
+  addItem(num2 + "! = " + factEx);
 });
 
 const btn3 = document.getElementById("gcdBtn");
 btn3.addEventListener("click", (e) => {
-  let gcdEx = gcd(99, 990);
-  addItem("GCD of 990 and 99 is " + gcdEx);
+  num1 = document.getElementById("num1").value;
+  num2 = document.getElementById("num2").value;
+  let gcdEx = gcd(num1, num2);
+  addItem("GCD of " + num1 + " and " + num2 + " is " + gcdEx);
 });
