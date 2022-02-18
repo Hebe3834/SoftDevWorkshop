@@ -1,0 +1,17 @@
+HAM 
+Softdev pd2
+k31 -- Paint Paint Paint
+2022-02-15m
+
+requestID
+	- global variable
+
+window.requestAnimationFrame(callback)
+	- Tells the browser to preform the callback function and prepare the next frame in the animation
+	- Should be called before each repaint
+	- Uses recursion to continuously update the animation
+	- Returns/updates requestID, which is used to stop the animation in window.cancelAnimationFrame().
+
+window.cancelAnimationFrame(requestID)
+	- Stops the animation
+
