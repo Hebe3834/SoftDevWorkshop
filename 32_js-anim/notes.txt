@@ -1,0 +1,27 @@
+Team Trig :: Yuqing Wu, Hebe Huang
+SoftDev pd2
+K32: More Moving Parts
+2022-02-17
+
+Image()
+    - Creates an image
+    - Does the same thing as document.createElement('img')
+    - var myImage = new Image(w, h);
+IMAGE_OBJ.src
+    - Set this to the name of your image (a string)
+CANVAS_CONTEXT.drawImage
+    - Draws an image on the canvas
+    - ctx.drawImage(myImage, x,y,w,h);
+        - draws the image at (x,y) with a width of w and height of height
+            - w and h have to be included here even if it was specified in Image()
+        - (0,0) on the canvas is the upper left corner
+Math.random()
+    - Returns a random double in the range [0, 1)
+    - Can be multiplied by factors to get higher random numbers
+        - Math.random()*5 gets a random number from 0 up to 5
+Math.floor(n)
+    - Returns the largest int <= to n
+
+Notes:
+    - Because two separate animations were used, we need two requestIDs
+    
