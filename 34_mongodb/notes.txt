@@ -1,0 +1,11 @@
+MongoDB: 
+- Database program good for high volumes of low-complexity data
+
+Video: 
+- Making data easy to work with
+- Query
+- Compute
+- Connect
+- Store
+- Index
+- Analyze
