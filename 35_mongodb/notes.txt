@@ -1,0 +1,25 @@
+Hebe Huang
+SoftDev
+K35: Another DB Perspective
+2022-05-01
+
+CHAPTER 1
+
+MongoDB: NoSQL documentDB
+  - NoSQL -> data stored and organized but not in rows/cols
+  - documentDB -> data stored in documents which are organized using collections
+
+Documents
+  - {
+      "field": "value"
+      "uniqueIdentifier": "data"
+      num: 7
+    }
+
+MongoDB Atlas: Cloud database for runnign MongoDB
+Replica set: connected machines with the same data
+Instance: single machine running software (ie mongodb db)
+Clusters: group of servers that store data
+
+Connecting to Atlas Cluster: 
+  - https://cloud.mongodb.com/  >  Deployment/Database  >  Connect w mongodb shell 
