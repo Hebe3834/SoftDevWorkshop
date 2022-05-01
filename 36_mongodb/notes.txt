@@ -1,0 +1,39 @@
+Hebe Huang
+SoftDev
+K35: Another DB Perspective
+2022-05-01
+
+CHAPTER 2
+
+JSON: Javascript Standard Object Notation
+  - {
+      "key": value,
+      "otherField": {
+                        "a": 1,
+                        "b": 2
+                    }
+    }
+  - curly braces, quotes surrounding keys, commas between kay:value pairs
+  - documents can be values too
+  - mongoDB keys are fields
+  - JSON is readable but lengthy, slow to parse, doesn't support many data types
+      - Therefore mongodb uses BSON (Binary JSON) to store data and JSON for viewing
+    
+Export data in BSON:  mongodump --uri "mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies"
+Export data in JSON:  mongoexport --uri="mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies" --collection=sales --out=sales.json
+Import data in BSON:  mongorestore --uri "mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies"  --drop dump
+Import data in JSON:  mongoimport --uri="mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies" --drop sales.json
+You can browse documents on atlas by clicking on collections and searching the data explorer
+
+Commands:
+  - mongo "mongodb+srv://<username>:<password>@<clusterURI>.mongodb.net/admin"
+      - connect to atlas cluster
+  - show dbs
+  - use <dbName>
+  - show collections
+  - db.zips.find({"key": "value", "key1": "value1", ...})
+      - db is pointing to the db you are using
+  - db.zips.find({"state": "NY"}).count()
+  - db.zips.find({"state": "NY", "city": "ALBANY"}).pretty()
+      - for readable formatting
+      
