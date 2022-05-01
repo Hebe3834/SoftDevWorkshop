@@ -11,8 +11,8 @@ MongoDB: NoSQL documentDB
 
 Documents
   - {
-      "field": "value"
-      "uniqueIdentifier": "data"
+      "field": "value",
+      "uniqueIdentifier": "data",
       num: 7
     }
 
