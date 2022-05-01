@@ -1,3 +1,8 @@
+Hebe Huang
+SoftDev
+K34: Another DB Perspective
+2022-05-26
+
 MongoDB: 
 - Database program good for high volumes of low-complexity data
 
