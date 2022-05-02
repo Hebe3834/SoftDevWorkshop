@@ -28,6 +28,7 @@ You can browse documents on atlas by clicking on collections and searching the d
 Commands:
   - mongo "mongodb+srv://<username>:<password>@<clusterURI>.mongodb.net/admin"
       - connect to atlas cluster
+      - URI: Uniform Resource Identifier
   - show dbs
   - use <dbName>
   - show collections
