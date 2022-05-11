@@ -1,0 +1,37 @@
+Hebe Huang
+SoftDev
+K37: Another DB Perspective
+2022-05-11
+
+CHAPTER 3
+
+Inserting Documents:
+  - "_id" required unique identifier in all documents
+      - default: ObjectId()
+  - "INSERT DOCUMENT" on the Data Explorer
+  - db.inspections.findOne();
+      - get a random document from the collection
+  - db.inspections.insert([{ "_id": 1, "test": 1 },{ "_id": 1, "test": 2 },{ "_id": 3, "test": 3 }],{"ordered":false})
+      - insert three test documents while specifying the _id values
+      - {"ordered":false} is optional and stops mongodb's default adding of documents in order listed
+      - inserting into a nonexistant collection name creates a new collection
+      
+Updating Documents:
+  - Hover over document on the Data Explorer > pencil icon
+  - updateOne(), updateMany(), "$inc" (incrementing value), "$set" (setting value), "$push" (adding field/value)
+      - db.zips.updateOne({ "zip": "12534" }, { "$set": { "pop": 17630 } })
+      - db.zips.updateMany({ "city": "HUDSON" }, { "$inc": { "pop": 10 } })
+      - db.grades.updateOne({ "student_id": 250, "class_id": 339 },
+                    { "$push": { "scores": { "type": "extra credit",
+                                             "score": 100 }
+                                }
+                     })
+  - If you try to update a nonexistant field the field is created
+
+Deleting Documents
+  - Hover over document on the Data Explorer > garbage icon
+  - db.inspections.deleteMany({ "test": 1 })
+  - db.inspections.deleteOne({ "test": 3 })
+  - db.inspection.drop()
+      - delete entire collection
+  - data gone for good
