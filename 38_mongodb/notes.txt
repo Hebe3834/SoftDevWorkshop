@@ -1,0 +1,31 @@
+Hebe Huang
+SoftDev
+K38: Another DB Perspective
+2022-05-11
+
+CHAPTER 4
+
+Comparison Operators:
+  - $eq / $ne
+      - equal to/not equal to
+  - $gt / $lt
+      - greater than/less than
+  - $gte / $lte
+      - greater than or equal to/less than or equal to
+  - search using the filter box in the atlas cluster or find()
+  - {<field>: {<opertaor>: <value>}}
+  - db.trips.find({ "tripduration": { "$lte" : 70 },
+                "usertype": { "$ne": "Subscriber" } }).pretty()
+                
+Logic Operators:
+  - $and / $or / $nor / $not
+  - {$<operator>: [{statement1}, {statement2), ... ]
+  - implicit $and is used as a default operator when an operator isn't specified/there are multiple conditions
+      - ie {"student_id": {"gt": 25, "lt": 100}}
+  - explicit $and used when using multiple operators
+  - db.routes.find({ "$and": [ { "$or" :[ { "dst_airport": "KZN" },
+                                    { "src_airport": "KZN" }
+                                  ] },
+                          { "$or" :[ { "airplane": "CR2" },
+                                     { "airplane": "A81" } ] }
+                         ]}).pretty()
