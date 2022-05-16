@@ -29,3 +29,49 @@ Logic Operators:
                           { "$or" :[ { "airplane": "CR2" },
                                      { "airplane": "A81" } ] }
                          ]}).pretty()
+                         
+Expressive Query Operator:
+  - { $expr: { <expression> } }
+  - for using variables and conditionals
+  - $ can be used for both operators ("$eq") and to signify field value ("$_id")
+  - db.trips.find({ "$expr": { "$and": [ { "$gt": [ "$tripduration", 1200 ]},
+                         { "$eq": [ "$end station id", "$start station id" ]}
+                       ]}}).count()
+  - MQL syntax: { <field>: { <operator>: <value> } }
+  - Agregation syntax: { <operator>: { <field>, <value> } }
+
+Array Operators:
+  - {<array field>: {"$size": <number> }
+      - returns cursor with all docs where <array field> is <number> long
+  - {<array field>: { <single element> }
+      - returns cursor with all docs where <array field> contains the <single element>
+  - {<array field>: { <array> }
+      - returns cursor with all docs where <array field> matches <array> exactly
+  - {<array field>: {"$all": <array> }
+      - returns cursor with all docs where <array field> contains elements in <array>, regardless of order
+
+Projection
+  - Second argument in the find command
+      - db.<collection>.find({ <query> }, { <projection> })
+  - db.listingsAndReviews.find({ "amenities": "Wifi" },
+                           { "price": 1, "address": 1, "_id": 0 }).pretty()
+  - 1 to include the field, 0 to exclude the field
+      - can not mix and match 1s and 0s
+          - except to exclude "_id"          
+  - {<field>: { "$eleMatch": { <field>: <value> } } }
+      - matches docs where at least one element metches the query
+      - or projects array elements where at least one element metches the query
+  - db.companies.find({ "offices": { "$elemMatch": { "city": "Seattle" } }
+                  }).count()
+          - all documents in which an office array element contains the field city with the value Seattle.
+  - db.grades.find({ "class_id": 431 },
+               { "scores": { "$elemMatch": { "score": { "$gt": 85 } } }
+             }).pretty()
+             
+Arrays and Sub-documents:
+  - dot notation specifies address of nested elements in doc
+  - db.companies.find({ "relationships.0.person.last_name": "Zuckerberg" },
+                  { "name": 1 }).pretty()
+      - returns { "_id" : ObjectId("52cdef7c4bab8bd675297d8e"), "name" : "Facebook" }
+  - db.collection.find({"field 1.otherfield.another field": "value"})
+  
