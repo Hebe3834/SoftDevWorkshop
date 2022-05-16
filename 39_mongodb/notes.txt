@@ -1,0 +1,60 @@
+Hebe Huang
+SoftDev
+K39: Another DB Perspective
+2022-05-16
+
+CHAPTER 5
+
+Aggregation Framework:
+  - Another way to query data in mongodb
+  - Order of actions listed matters (pipeline)
+      - give data to pipeline > intructions on treating data > transformed data emerges
+  - db.listingsAndReviews.aggregate([
+                                  { "$project": { "address": 1, "_id": 0 }},
+                                  { "$group": { "_id": "$address.country",
+                                                "count": { "$sum": 1 } } }
+                                ])
+  - $match: first stage, filters data using criteria
+        - { "$match": { "amenities": "Wifi" }}
+  - $project: filters out fields
+        - { "$project": { "address": 1, "_id": 0 }}
+  - $group: group by expression
+        - { "$group": { "_id": "$address.country" }}
+  - $sum: value of fields in a group added to total of that group
+        - { "$sum": $price }
+        
+.sort() and .limit():
+  - db.zips.find().sort({ "pop": 1 }).limit(1)
+      - sorts by population in increasing order
+      - returns top result
+  - db.zips.find().sort({ "pop": -1 }).limit(10)
+      - sorts by population in decreasing order
+      - returns top 10 results
+  - Cursor methods: not applied to data in database
+      - sort(), limit(), pretty(), count()
+      - sort() always first
+      - sort allowes multiple criteria
+      
+Indexes
+  - Indexes are a way to more efficiently access the same data
+  - single field index
+      - db.trips.createIndex({ "birth year": 1 })
+  - compound index
+      - db.trips.createIndex({ "start station id": 1, "birth year": 1 })
+
+Data Modeling
+  - way to organize fields to support application preformance and querying
+  - data stored in the way it is used
+      - data used together stored together
+  - data evolves > data model evolves 
+  
+Upsert
+  - update + insert
+  - db.collection.updateOne( {<query>}, {<update>}, {"upsert":true}}
+  - updates if there is a match, inserts if not
+  - db.iot.updateOne({ "sensor": r.sensor, "date": r.date,
+                   "valcount": { "$lt": 48 } },
+                         { "$push": { "readings": { "v": r.value, "t": r.time } },
+                        "$inc": { "valcount": 1, "total": r.value } },
+                 { "upsert": true })
+                 
