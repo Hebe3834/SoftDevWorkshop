@@ -1,0 +1,33 @@
+Hebe Huang
+SoftDev
+K40: Another DB Perspective
+2022-05-16
+
+CHAPTER 6
+
+Atlas Features:
+  - Indexes tab: index use, creator, date
+  - Schema tab: suggestions 
+  - Aggregate tab: view pipeline, export pipeline to different languages (ie java)
+                  - autocomplete/search commands
+                  
+Products and Options:
+  - Organizations > projects/users > clusters
+  - Realm => build web/mobile apps, integrate mongodb
+  - Charts => data visualization
+      - add dashboards, charts from fields/data
+      - multiple different types of charts: bar graphs, heat maps, scatterplots, etc
+      
+Compass:
+  - MongoDB's Graphical User Interface Product
+  - connect to atlas cluster
+  - view info on databases
+  - documents tab: view, filter, sort data
+      - export query to language of choice
+  - schema tab: information on each document (field types, dates)
+      - visualization of data (ie maps)
+  - indexes tab: create indexes with gui
+  - explain plan tab: shows how data was found/retrieved
+      - show how efficiend your query was
+  - validation tab: control what is/isn't allowed to be written into database
+  
